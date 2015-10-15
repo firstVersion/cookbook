@@ -13,5 +13,16 @@ end
 
 service "httpd" do
   action [ :enable, :start]
+  supports :restart => true
 end
+
+template "httpd.conf" do
+  path "/etc/httpd/conf/httpd.conf"
+  owner "root"
+  group "root"
+  mode 0644
+  notifies :reload, 'service[httpd]'
+end
+
+
 

@@ -17,7 +17,7 @@ package "php-*" do
   options "-y"
 end
 
-%w{php php-common php-cli php-pdo php-mysql php-devel php-gd}.each do |pkg|
+%w{php php-common php-cli php-pdo php-mysql php-devel php-gd php-mbstring php-intl}.each do |pkg|
   package pkg do
     action :install
     options "-y --enablerepo=remi-php56"

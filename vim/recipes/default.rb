@@ -15,3 +15,8 @@ template "/home/vagrant/.vimrc" do
   owner "vagrant"
   mode 0777
 end
+
+template "/root/.vimrc" do
+  owner "root"
+  mode 0777
+end

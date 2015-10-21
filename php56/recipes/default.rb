@@ -24,3 +24,6 @@ end
   end
 end
 
+template "/etc/php.ini" do
+end
+

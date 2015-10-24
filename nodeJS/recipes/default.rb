@@ -2,10 +2,9 @@
 # Cookbook Name:: nodeJS
 # Recipe:: default
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, Version1 
 #
 # All rights reserved - Do Not Redistribute
-
 
 package "epel-release" do
   action :install

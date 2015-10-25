@@ -16,7 +16,7 @@ package "npm" do
 end
 
 bash "install n" do
-  not_is { File.exists?("/usr/bin/n") }
+  not_if { File.exists?("/usr/bin/n") }
   code <<-EOC
     npm install n -g
   EOC

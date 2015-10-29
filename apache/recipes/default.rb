@@ -16,6 +16,12 @@ service "httpd" do
   supports :restart => true
 end
 
+directory '/vagrant/html/' do
+  owner 'root'
+  mode '0777'
+  action :create
+end
+
 template "httpd.conf" do
   path "/etc/httpd/conf/httpd.conf"
   owner "root"

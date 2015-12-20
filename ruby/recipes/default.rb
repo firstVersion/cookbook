@@ -56,11 +56,18 @@ execute "add bash_profile" do
   EOC
 end
 
-#execute "install ruby" do
-#  command "rbenv install 2.1.0";
-#end
+execute "source bash_profile" do
+  user 'vagrant'
+  commant <<-EOC
+   source ~/.bash_profile
+  EOC
+end
 
-#execute "set ruby version" do
+# execute "install ruby" do
+#  command "rbenv install 2.1.0";
+# end
+#
+# execute "set ruby version" do
 #  command "rbenv global 2.1.0";
-#end
+# end
 

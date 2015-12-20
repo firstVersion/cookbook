@@ -55,12 +55,12 @@ execute "add bash_profile" do
       echo 'eval "$(rbenv init -)"' >> /home/vagrant/.bash_profile   
   EOC
 end
-/*
-execute "install ruby" do
-  command "rbenv install 2.1.0";
-end
 
-execute "set ruby version" do
-  command "rbenv global 2.1.0";
-end
-*/
+#execute "install ruby" do
+#  command "rbenv install 2.1.0";
+#end
+
+#execute "set ruby version" do
+#  command "rbenv global 2.1.0";
+#end
+

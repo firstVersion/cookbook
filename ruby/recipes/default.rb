@@ -58,7 +58,7 @@ end
 
 execute "source bash_profile" do
   user 'vagrant'
-  commant <<-EOC
+  command <<-EOC
    source ~/.bash_profile
   EOC
 end

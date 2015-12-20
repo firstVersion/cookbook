@@ -56,9 +56,8 @@ execute "add bash_profile" do
   EOC
 end
 
-execute "source bash_profile" do
-  user 'vagrant'
-  command <<-EOC
+bash "source bash_profile" do
+  code <<-EOC
    source /home/vagrant/.bash_profile
   EOC
 end

@@ -59,7 +59,7 @@ end
 execute "source bash_profile" do
   user 'vagrant'
   command <<-EOC
-   source ~/.bash_profile
+   source /home/vagrant/.bash_profile
   EOC
 end
 

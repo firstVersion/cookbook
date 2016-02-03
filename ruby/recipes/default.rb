@@ -18,6 +18,13 @@
     end
 end
 
+directory "/home/vagrant/.rbenv" do
+  owner 'vagrant'
+  group 'vagrant'
+  mode '0755'
+  action :create
+end
+
 git "/home/vagrant/.rbenv" do
   repository "https://github.com/sstephenson/rbenv.git"
   revision "master"
@@ -25,6 +32,12 @@ git "/home/vagrant/.rbenv" do
   action :sync
 end
 
+directory "/home/vagrant/.rbenv/plugins" do
+  owner "vagrant"
+  group "vagrant"
+  mode "0755"
+  action :create
+end
 
 git "/home/vagrant/.rbenv/plugins/ruby-build" do
   repository "https://github.com/sstephenson/ruby-build.git"
@@ -43,8 +56,17 @@ execute "add bash_profile" do
   EOC
 end
 
-execute "install ruby" do
-  user 'vagrant'
-  not_if 'which ruby'
-  command "rbenv install 2.1.0";
+bash "source bash_profile" do
+  code <<-EOC
+   source /home/vagrant/.bash_profile
+  EOC
 end
+
+# execute "install ruby" do
+#  command "rbenv install 2.1.0";
+# end
+#
+# execute "set ruby version" do
+#  command "rbenv global 2.1.0";
+# end
+

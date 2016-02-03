@@ -8,7 +8,7 @@
 #
 package "mysql-server" do
   action :install
-  version "5.5.46-1.el6.remi"
+  version "5.6.46-1.el6.remi"
   options "-y --enablerepo=remi"
 end
 

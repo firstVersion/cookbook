@@ -10,6 +10,16 @@ package "epel-release" do
   action :install
 end
 
+bash 'add repo' do
+  code <<-EOC
+  curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+  EOC
+end
+
+package "nodejs" do
+  action :install
+end
+
 package "npm" do
   action :install
   options "--enablerepo=epel"
@@ -21,11 +31,3 @@ bash "install n" do
     npm install n -g
   EOC
 end
-
-bash "install node latest version" do
-  code <<-EOC
-    n latest
-  EOC
-end
-
-
